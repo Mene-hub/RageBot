@@ -1,0 +1,57 @@
+﻿<Window x:Class="twitchConnectChat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:twitchConnectChat"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FF303030"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Rage Bot" Height="500" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0" Background="#FF272727">
+            <materialDesign:PopupBox x:Name="DotsMenu" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="0" ToolTip="Options" Foreground="Gray">
+                <materialDesign:PopupBox.ToggleCheckedContent>
+                    <materialDesign:PackIcon Kind="Pencil" Width="24" Height="24" />
+                </materialDesign:PopupBox.ToggleCheckedContent>
+                <StackPanel>
+                    <Button Click="OpenCredits">Credits</Button>
+                </StackPanel>
+            </materialDesign:PopupBox>
+
+            <Button Style="{StaticResource MaterialDesignOutlinedButton}" Click="OpenDonation"  ToolTip="Support my work (PayPal)" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderBrush="#FF03A9F4" FontSize="12" Foreground="#FF03A9F4" Width="108" Height="23" Background="#5A0386F4">
+                SUPPORT ME
+            </Button>
+
+            <Canvas VerticalAlignment="Center" Height="26" Width="10" Margin="10,0,0,0">
+                <Ellipse Name="ConnectDot" Width="10" Height="10" Fill="Red" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,8,0,0"/>
+            </Canvas>
+            <Label Name="ConnectStatus" Content="Offline" Foreground="#DDFF0000" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+        </StackPanel>
+
+        <StackPanel Margin="0,20,0,0" HorizontalAlignment="Center" Height="445">
+            <Image x:Name="ImageProfile" Width="100" Height="100" Margin="0,20,0,0" Source="RageBot.png"/>
+
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF8F45FE" Margin="0,25,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Height="20" Text="TWITCH CHANNEL"/>
+            <TextBox x:Name="TwitchChannelName" materialDesign:HintAssist.Hint="Channel Name" materialDesign:HintAssist.Foreground="#FF8F45FE" materialDesign:TextFieldAssist.UnderlineBrush="#FF8F45FE" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Margin="0,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+            <Button x:Name="BT_DashboardOpener" Style="{StaticResource MaterialDesignOutlinedButton}" ToolTip="Open Bot Dashboard" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" BorderBrush="#FF8F45FE" FontSize="12" Click="BT_DashboardOpener_Click" Foreground="#FF8F45FE" Width="108">
+                DASHBOARD
+            </Button>
+            <Button x:Name="BT_OverlayOpener" Style="{StaticResource MaterialDesignOutlinedButton}" ToolTip="Open Bot Overlay for OBS" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" BorderBrush="#FF8F45FE" FontSize="12" Click="BT_OverlayOpener_Click" Foreground="#FF8F45FE" Width="108">
+                OVERLAY
+            </Button>
+            <materialDesign:Badged Badge="Twitch" BadgeColorZoneMode="Dark" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,0" BadgeBackground="#FF8F45FE" BadgeForeground="White">
+                <Button Name="BT_Start" Foreground="#DD000000" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="108" Background="#F803A9F4">START BOT</Button>
+            </materialDesign:Badged>
+        </StackPanel>
+
+    </Grid>
+</Window>

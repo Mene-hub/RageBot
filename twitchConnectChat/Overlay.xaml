@@ -1,0 +1,63 @@
+﻿<Window x:Class="twitchConnectChat.Overlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:twitchConnectChat"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FF23FF00"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Overlay" Height="250" Width="198" ResizeMode="NoResize" Closing="StopTimer">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Height="26" Background="#FF04ABED">
+                <Image Source="RageBot.png" Margin="0"/>
+                <Label Foreground="#FF303030" FontSize="14" Content="Rage Bot"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF303030" Margin="0,15,0,0" Width="190">
+                <Canvas>
+                    <Rectangle Fill="#FF04ABED" Width="15" Height="24" Stroke="#FF303030" StrokeThickness="0"></Rectangle>
+                </Canvas>
+                <Image Source="BitsLogo.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"></Image>
+                <Label Foreground="#FF04ABED" Name="LB_MinBits" HorizontalAlignment="Center" VerticalAlignment="Center">Min bits donation: 1000</Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF303030" Margin="0,15,0,0" Width="190">
+                <Canvas>
+                    <Rectangle Fill="#FF04ABED" Width="15" Height="24" Stroke="#FF303030" StrokeThickness="0"></Rectangle>
+                </Canvas>
+                <materialDesign:PackIcon Kind="ExclamationThick" Margin="20,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" Foreground="#FF04ABED" />
+                <Label Foreground="#FF04ABED" HorizontalAlignment="Center" VerticalAlignment="Center">Bot Command</Label>
+                <materialDesign:PackIcon Kind="ArrowDropDown" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF04ABED" />
+            </StackPanel>
+            <StackPanel Width="190" HorizontalAlignment="Left" VerticalAlignment="Top" Height="75" Background="#FF4F4F4F" Orientation="Horizontal">
+                <Canvas>
+                    <Rectangle Fill="#FF04ABED" Width="15" Height="75"/>
+                </Canvas>
+                <StackPanel Margin="24,0,0,0" Height="75" VerticalAlignment="Top" Width="150" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ExclamationThick" HorizontalAlignment="Left" VerticalAlignment="Center" Width="15" Height="15" Foreground="#FF04ABED" />
+                        <Label Foreground="#FF04ABED" Margin="-5,0,0,0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Content="mouse X Y"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ExclamationThick" HorizontalAlignment="Left" VerticalAlignment="Center" Width="15" Height="15" Foreground="#FF04ABED" />
+                        <Label Foreground="#FF04ABED" Margin="-5,0,0,0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">mouse shoot</Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ExclamationThick" HorizontalAlignment="Left" VerticalAlignment="Center" Width="15" Height="15" Foreground="#FF04ABED" />
+                        <Label Foreground="#FF04ABED" Margin="-5,0,0,0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">entry TXT</Label>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

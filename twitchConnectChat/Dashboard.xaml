@@ -1,0 +1,38 @@
+﻿<Window x:Class="twitchConnectChat.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:twitchConnectChat"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Dashboard" Height="449" Width="350" ResizeMode="NoResize" Initialized="Inizialize">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0">
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF03A9F4" Margin="0" VerticalAlignment="Center" FontSize="18" Height="20" HorizontalAlignment="Left"><Run Text="Donation" Foreground="#FF9F9F9F"/><LineBreak/><Run/></TextBlock>
+            <TextBlock x:Name="TB_MinBits" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF03A9F4" Margin="20,20,0,0" VerticalAlignment="Center" FontSize="14" Height="20" HorizontalAlignment="Left"><Run Foreground="#FF9F9F9F" FontSize="10" Text="Min"/><Run Foreground="#FF9F9F9F" FontSize="10" Text=" "/><Run Foreground="#FF9F9F9F" FontSize="10" Text="Bits Donation"/></TextBlock>
+            <Slider Name="SL_MinBits" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="1000" Value="500" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0" ValueChanged="UpdateMinBitsValue" />
+
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF03A9F4" Margin="0,30,0,0" VerticalAlignment="Center" FontSize="18" Height="20" HorizontalAlignment="Left"><Run Text="Entry" Foreground="#FF9F9F9F"/><LineBreak/><Run/></TextBlock>
+            <CheckBox x:Name="EntryEnable" Margin="20,20,0,0" Content="Is enabled" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF03A9F4" Margin="0,30,0,0" VerticalAlignment="Center" FontSize="18" Height="20" HorizontalAlignment="Left"><Run Text="Mouse" Foreground="#FF9F9F9F"/><LineBreak/><Run/></TextBlock>
+            <CheckBox x:Name="MouseEnable" Margin="20,10,0,0" Content="Mouse is enabled" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Checked="MouseEnabled" Unchecked="MouseEnabled"/>
+
+            <CheckBox x:Name="ShootEnable" Margin="20,20,0,0" Content="Mouse Shoot is enabled" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            <TextBlock Name="TB_MouseSensibility" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF03A9F4" Margin="20,20,0,0" VerticalAlignment="Center" FontSize="14" Height="20" HorizontalAlignment="Left"><Run Text="Mouse Sensibility" Foreground="#FF9F9F9F" FontSize="10"/><LineBreak/><Run/></TextBlock>
+            <Slider Name="SL_MouseSensibility" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="100" Value="25" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0" ValueChanged="UpdateMouseSensibilityValue" />
+        </StackPanel>
+
+        <Button Name="BT_Save" Style="{StaticResource MaterialDesignIconButton}" ToolTip="MaterialDesignIconButton" Background="{DynamicResource MaterialDesignTextFieldBoxBackground}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="BT_Save_Click">
+            <materialDesign:PackIcon Kind="ContentSave" />
+        </Button>
+    </Grid>
+</Window>
