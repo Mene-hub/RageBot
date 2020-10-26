@@ -16,7 +16,9 @@
         Title="Dashboard" Height="449" Width="350" ResizeMode="NoResize" Initialized="Inizialize">
     <Grid>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0">
-            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF03A9F4" Margin="0" VerticalAlignment="Center" FontSize="18" Height="20" HorizontalAlignment="Left"><Run Text="Donation" Foreground="#FF9F9F9F"/><LineBreak/><Run/></TextBlock>
+            <CheckBox x:Name="TestEnable" Margin="0" Content="Test Mode" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF03A9F4" Margin="0,20,0,0" VerticalAlignment="Center" FontSize="18" Height="20" HorizontalAlignment="Left"><Run Text="Donation" Foreground="#FF9F9F9F"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="TB_MinBits" Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF03A9F4" Margin="20,20,0,0" VerticalAlignment="Center" FontSize="14" Height="20" HorizontalAlignment="Left"><Run Foreground="#FF9F9F9F" FontSize="10" Text="Min"/><Run Foreground="#FF9F9F9F" FontSize="10" Text=" "/><Run Foreground="#FF9F9F9F" FontSize="10" Text="Bits Donation"/></TextBlock>
             <Slider Name="SL_MinBits" TickFrequency="5" Orientation="Horizontal" Minimum="1" Maximum="1000" Value="500" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0" ValueChanged="UpdateMinBitsValue" />
 

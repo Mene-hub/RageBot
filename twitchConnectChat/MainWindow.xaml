@@ -16,6 +16,7 @@
         Title="Rage Bot" Height="500" Width="300" ResizeMode="NoResize">
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0" Background="#FF272727">
+            <WebBrowser x:Name="WB" Height="0" Width="0" Visibility="Hidden"></WebBrowser>
             <materialDesign:PopupBox x:Name="DotsMenu" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="0" ToolTip="Options" Foreground="Gray">
                 <materialDesign:PopupBox.ToggleCheckedContent>
                     <materialDesign:PackIcon Kind="Pencil" Width="24" Height="24" />
@@ -37,7 +38,14 @@
         </StackPanel>
 
         <StackPanel Margin="0,20,0,0" HorizontalAlignment="Center" Height="445">
-            <Image x:Name="ImageProfile" Width="100" Height="100" Margin="0,20,0,0" Source="RageBot.png"/>
+            <StackPanel Height="100" Margin="0,20,0,0" Orientation="Horizontal">
+                <Image x:Name="ImageProfile" Width="100" Height="100" Margin="20,0,0,0" Source="RageBot.png" HorizontalAlignment="Left"/>
+                <StackPanel Width="130" Height="90">
+                    <Label Name="AccountName" Foreground="#FF04A5EE">Channel info:</Label>
+                    <Label Name="AccountTotalView" Height="20" Foreground="#FF04A5EE" FontSize="10"></Label>
+                    <TextBox Name="AccountDescription" FontSize="10" Height="50" ScrollViewer.CanContentScroll="True" Width="125" TextOptions.TextFormattingMode="Display" MaxWidth="125" TextWrapping="WrapWithOverflow" Margin="5,0,0,0" MaxHeight="50" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" IsInactiveSelectionHighlightEnabled="True" IsManipulationEnabled="True" IsReadOnly="True" TextAlignment="Justify" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" CaretBrush="{x:Null}" ></TextBox>
+                </StackPanel>
+            </StackPanel>
 
             <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Foreground="#FF8F45FE" Margin="0,25,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Height="20" Text="TWITCH CHANNEL"/>
             <TextBox x:Name="TwitchChannelName" materialDesign:HintAssist.Hint="Channel Name" materialDesign:HintAssist.Foreground="#FF8F45FE" materialDesign:TextFieldAssist.UnderlineBrush="#FF8F45FE" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Margin="0,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

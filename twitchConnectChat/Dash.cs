@@ -13,6 +13,7 @@ namespace twitchConnectChat
         public int MouseSens { get; set; }
         public bool MouseShootEnable { get; set; }
         public int MinBits { get; set; }
+        public bool TestEnable { get; set; }
 
         public Dash(){}
     }

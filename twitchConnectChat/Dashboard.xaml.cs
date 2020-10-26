@@ -33,13 +33,14 @@ namespace twitchConnectChat
             Dash temp = new Dash();
             temp = GestioneFileXml.ReadConfig();
 
-            if (File.Exists(@"..\DashConfig.xml"))
+            if (File.Exists(GestioneFileXml.path + @"DashConfig.xml"))
             {
                 EntryEnable.IsChecked = temp.EntryEnable;
                 MouseEnable.IsChecked = temp.MouseEnable;
                 SL_MouseSensibility.Value = temp.MouseSens;
                 ShootEnable.IsChecked = temp.MouseShootEnable;
                 SL_MinBits.Value = temp.MinBits;
+                TestEnable.IsChecked = temp.TestEnable;
 
                 TB_MouseSensibility.Text = "Mouse Sensibility: " + (int)SL_MouseSensibility.Value;
                 TB_MinBits.Text = "Min Bits Donation: " + (int)SL_MinBits.Value;
@@ -75,6 +76,7 @@ namespace twitchConnectChat
             temp.MouseSens = (int)SL_MouseSensibility.Value;
             temp.MouseShootEnable = (bool)ShootEnable.IsChecked;
             temp.MinBits = (int)SL_MinBits.Value;
+            temp.TestEnable = (bool)TestEnable.IsChecked;
             GestioneFileXml.SaveConfig(temp);
         }
 

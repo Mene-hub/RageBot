@@ -13,14 +13,14 @@ namespace twitchConnectChat
 {
     class GestioneFileXml
     {
-        public static string path = @"..\";
+        public static string path = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\";
         public static void SaveConfig(Dash U)
         {
-            string NomeFile = "DashConfig.xml";
+            string NomeFile = GestioneFileXml.path + "DashConfig.xml";
             try
             {
                 XmlSerializer xmls = new XmlSerializer(typeof(Dash));
-                StreamWriter Sw = new StreamWriter(path + NomeFile, false);
+                StreamWriter Sw = new StreamWriter(NomeFile, false);
                 xmls.Serialize(Sw, U);
                 Sw.Close();
             }
@@ -33,11 +33,11 @@ namespace twitchConnectChat
 
         public static Dash ReadConfig()
         {
-            string NomeFile = "DashConfig.xml";
+            string NomeFile = GestioneFileXml.path + "DashConfig.xml";
             try
             {
                 XmlSerializer Xmls = new XmlSerializer(typeof(Dash));
-                StreamReader Sr = new StreamReader(path + NomeFile);
+                StreamReader Sr = new StreamReader(NomeFile);
                 Dash L = (Dash)Xmls.Deserialize(Sr);
                 Sr.Close();
                 return L;

@@ -14,7 +14,7 @@ namespace twitchConnectChat
         
         public void SetConfig(string channel)
         {
-            File.WriteAllText(@"..\botconfig.txt", channel);
+            File.WriteAllText(GestioneFileXml.path + @"botconfig.txt", channel);
             Channel = channel;
         }
 
