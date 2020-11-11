@@ -24,3 +24,4 @@ Last Update information:
     Version: 1.3.0.0
     Download: http://ragebot.unax.com
   1. Funzione TEST
+    
