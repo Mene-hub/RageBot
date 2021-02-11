@@ -74,7 +74,7 @@ namespace twitchConnectChat
 
         private void connect()
         {
-            ConnectionCredentials credentials = new ConnectionCredentials("TheMeneBot", "gnudhq7j8ik6yek3y0e9vn5gi3lx77");
+            ConnectionCredentials credentials = new ConnectionCredentials("", "");
             var clientOptions = new ClientOptions
             {
                 MessagesAllowedInPeriod = 999, ThrottlingPeriod = TimeSpan.FromSeconds(3)
